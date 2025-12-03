@@ -1,0 +1,33 @@
+baseURL: "https://tonusername.github.io/"
+title: "Mon Portfolio"
+theme: "PaperMod"
+
+params:
+  profileMode:
+    enabled: true
+    title: "Ton Nom"
+    subtitle: "Développeur Web"
+    imageUrl: "/images/profile.jpg"
+    imageTitle: "Ma photo"
+    buttons:
+      - name: "Projets"
+        url: "/posts"
+      - name: "À propos"
+        url: "/about"
+      - name: "Contact"
+        url: "/contact"
+  
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/tonusername"
+
+menu:
+  main:
+    - identifier: posts
+      name: Projets
+      url: /posts/
+      weight: 10
+    - identifier: about
+      name: À propos
+      url: /about/
+      weight: 20
