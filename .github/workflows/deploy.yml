@@ -1,34 +1,31 @@
-﻿name: Deploy Hugo to GitHub Pages
+﻿name: Deploy Hugo
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        submodules: recursive
-        fetch-depth: 0
-    
+        submodules: true
+        
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: 'latest'
         extended: true
-    
+        
     - name: Build
-      run: hugo --minify
-    
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      run: hugo --minify --baseURL "https://BOURHIM123.github.io/"
+      
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: gh-pages
-        force_orphan: true
+        branch: gh-pages
+        folder: public
+        clean: true
