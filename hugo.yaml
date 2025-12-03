@@ -1,4 +1,4 @@
-baseURL: "https://tonusername.github.io/"
+baseURL: "https://BOURHIM123.github.io/"
 title: "Mon Portfolio"
 theme: "PaperMod"
 
@@ -19,7 +19,7 @@ params:
   
   socialIcons:
     - name: "github"
-      url: "https://github.com/tonusername"
+      url: "https://github.com/BOURHIM123"
 
 menu:
   main:
